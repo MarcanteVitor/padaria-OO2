@@ -4,7 +4,6 @@
  */
 package br.edu.utfpr.entidades;
 
-import java.math.BigInteger;
 import java.time.LocalDate;
 
 /**
@@ -12,7 +11,7 @@ import java.time.LocalDate;
  * @author Vitor Marcante
  */
 public class Venda {
-    private BigInteger codigo;
+    private int id;
     private Cliente cliente_id;
     private Pedido pedido_id;
     private LocalDate data_venda;
@@ -20,13 +19,14 @@ public class Venda {
     private Double valor_venda;
     private Double valor_troco;
     private Boolean cancelado;
-    private char entrega;
+    private String entrega;
 
     public Venda() {
     }
 
-    public Venda(BigInteger codigo, Cliente cliente_id, Pedido pedido_id, LocalDate data_venda, Double valor_pago, Double valor_venda, Double valor_troco, Boolean cancelado, char entrega) {
-        this.codigo = codigo;
+    public Venda(int id, Cliente cliente_id, Pedido pedido_id, LocalDate data_venda, Double valor_pago,
+            Double valor_venda, Double valor_troco, Boolean cancelado, String entrega) {
+        this.id = id;
         this.cliente_id = cliente_id;
         this.pedido_id = pedido_id;
         this.data_venda = data_venda;
@@ -37,12 +37,12 @@ public class Venda {
         this.entrega = entrega;
     }
 
-    public BigInteger getCodigo() {
-        return codigo;
+    public int getId() {
+        return id;
     }
 
-    public void setCodigo(BigInteger codigo) {
-        this.codigo = codigo;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Cliente getCliente_id() {
@@ -52,7 +52,7 @@ public class Venda {
     public void setCliente_id(Cliente cliente_id) {
         this.cliente_id = cliente_id;
     }
-    
+
     public Pedido getPedido_id() {
         return pedido_id;
     }
@@ -101,19 +101,19 @@ public class Venda {
         this.cancelado = cancelado;
     }
 
-    public char getEntrega() {
+    public String getEntrega() {
         return entrega;
     }
 
-    public void setEntrega(char entrega) {
+    public void setEntrega(String entrega) {
         this.entrega = entrega;
     }
 
     @Override
     public String toString() {
-        return "Venda{" + "codigo=" + codigo + ", cliente_id=" + cliente_id + ", pedido_id=" + pedido_id + ", data_venda=" + data_venda + ", valor_pago=" + valor_pago + ", valor_venda=" + valor_venda + ", valor_troco=" + valor_troco + ", cancelado=" + cancelado + ", entrega=" + entrega + '}';
+        return "Venda{" + "id=" + id + ", cliente_id=" + cliente_id + ", pedido_id=" + pedido_id
+                + ", data_venda=" + data_venda + ", valor_pago=" + valor_pago + ", valor_venda=" + valor_venda
+                + ", valor_troco=" + valor_troco + ", cancelado=" + cancelado + ", entrega=" + entrega + '}';
     }
-    
-    
-    
+
 }

@@ -4,7 +4,6 @@
  */
 package br.edu.utfpr.entidades;
 
-import java.math.BigInteger;
 import java.time.LocalDate;
 
 /**
@@ -12,37 +11,36 @@ import java.time.LocalDate;
  * @author Vitor Marcante
  */
 public class Pedido {
-    private BigInteger codigo;
+    private int id;
     private Cliente cliente_id;
     private LocalDate data_pedido;
     private LocalDate data_entrega;
     private Double valor_pedido;
-    private double valor_adiantamento;
     private boolean cancelado;
-    private char entrega;
-    private char status;
+    private String entrega;
+    private String status;
 
     public Pedido() {
     }
 
-    public Pedido(BigInteger codigo, Cliente cliente_id, LocalDate data_pedido, LocalDate data_entrega, Double valor_pedido, double valor_adiantamento, boolean cancelado, char entrega, char status) {
-        this.codigo = codigo;
+    public Pedido(int id, Cliente cliente_id, LocalDate data_pedido, LocalDate data_entrega, Double valor_pedido,
+            boolean cancelado, String entrega, String status) {
+        this.id = id;
         this.cliente_id = cliente_id;
         this.data_pedido = data_pedido;
         this.data_entrega = data_entrega;
         this.valor_pedido = valor_pedido;
-        this.valor_adiantamento = valor_adiantamento;
         this.cancelado = cancelado;
         this.entrega = entrega;
         this.status = status;
     }
 
-    public BigInteger getCodigo() {
-        return codigo;
+    public int getId() {
+        return id;
     }
 
-    public void setCodigo(BigInteger codigo) {
-        this.codigo = codigo;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Cliente getCliente_id() {
@@ -77,14 +75,6 @@ public class Pedido {
         this.valor_pedido = valor_pedido;
     }
 
-    public double getValor_adiantamento() {
-        return valor_adiantamento;
-    }
-
-    public void setValor_adiantamento(double valor_adiantamento) {
-        this.valor_adiantamento = valor_adiantamento;
-    }
-
     public boolean isCancelado() {
         return cancelado;
     }
@@ -93,26 +83,26 @@ public class Pedido {
         this.cancelado = cancelado;
     }
 
-    public char getEntrega() {
+    public String getEntrega() {
         return entrega;
     }
 
-    public void setEntrega(char entrega) {
+    public void setEntrega(String entrega) {
         this.entrega = entrega;
     }
 
-    public char getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(char status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
     @Override
     public String toString() {
-        return "Pedido{" + "codigo=" + codigo + ", cliente_id=" + cliente_id + ", data_pedido=" + data_pedido + ", data_entrega=" + data_entrega + ", valor_pedido=" + valor_pedido + ", valor_adiantamento=" + valor_adiantamento + ", cancelado=" + cancelado + ", entrega=" + entrega + ", status=" + status + '}';
+        return "Pedido{" + "cliente_id=" + cliente_id + ", data_pedido=" + data_pedido
+                + ", data_entrega=" + data_entrega + ", valor_pedido=" + valor_pedido + ", cancelado=" + cancelado + ", entrega=" + entrega + ", status=" + status + '}';
     }
-   
-    
+
 }

@@ -4,7 +4,6 @@
  */
 package br.edu.utfpr.entidades;
 
-import java.math.BigInteger;
 import java.time.LocalDate;
 
 /**
@@ -12,8 +11,9 @@ import java.time.LocalDate;
  * @author Vitor Marcante
  */
 public class Cliente {
+    private int id;
     private String nome;
-    private BigInteger cep;
+    private int cep;
     private String rua;
     private int numero;
     private String logradouro;
@@ -24,8 +24,9 @@ public class Cliente {
     public Cliente() {
     }
 
-    public Cliente(String nome, BigInteger cep, String rua, int numero, String logradouro, String bairro, boolean ativo,
-            LocalDate data_cadastro) {
+    public Cliente(int id, String nome, int cep, String rua, int numero, String logradouro, String bairro,
+            boolean ativo, LocalDate data_cadastro) {
+        this.id = id;
         this.nome = nome;
         this.cep = cep;
         this.rua = rua;
@@ -36,6 +37,14 @@ public class Cliente {
         this.data_cadastro = data_cadastro;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -44,11 +53,11 @@ public class Cliente {
         this.nome = nome;
     }
 
-    public BigInteger getCep() {
+    public int getCep() {
         return cep;
     }
 
-    public void setCep(BigInteger cep) {
+    public void setCep(int cep) {
         this.cep = cep;
     }
 
